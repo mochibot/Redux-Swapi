@@ -15,8 +15,8 @@ export const getChar = () => dispatch => {
   dispatch({
     type: FETCHING
   });
-  const request = axios.get('https://swapi.co/api/people')
-    request.then(response => {
+  axios.get('https://swapi.co/api/people')
+    .then(response => {
       console.log('data from API', response);
       dispatch({
         type: SUCCESS,

@@ -3,7 +3,7 @@ import { FETCHING, SUCCESS, FAILURE } /* we need our action types here*/ from ".
 const initialState = {
   characters: [],
   isFetching: false,
-  error: ''
+  error: null
   // Array characters, Boolean fetching, null error.
 };
 
@@ -16,6 +16,7 @@ export const charsReducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
+        error: null
       }
     case SUCCESS:
       return {
@@ -24,6 +25,7 @@ export const charsReducer = (state = initialState, action) => {
         isFetching: false
       }
     case FAILURE:
+      console.log('error');
       return {
         ...state,
         isFetching: false,
