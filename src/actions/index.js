@@ -23,7 +23,7 @@ export const getChar = () => dispatch => {
         payload: response.data.results
       })
     })
-    .then(error => {
+    .catch(error => {
       console.log('error getting data from API', error);
       dispatch({
         type: FAILURE
